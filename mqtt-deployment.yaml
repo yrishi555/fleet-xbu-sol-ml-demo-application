@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mqtt
+  name: mqtt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mqtt
+  template:
+    metadata:
+      labels:
+        app: mqtt
+    spec:
+      containers:
+        - image: muhammadb/xbu-mqtt
+          name: mqtt
+          ports:
+            - containerPort: 1883
+            - containerPort: 1884
+          stdin: true
+      hostname: mqtt
+      imagePullSecrets:
+        - name: regcred
