@@ -2,10 +2,10 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   labels:
-    app: volume_input_claim
-  name: volume_input_claim
+    app: volume-input-claim
+  name: volume-input-claim
 spec:
-  volumeName: "inputvolume"
+  volumeName: "input-volume"
   storageClassName: ""
   accessModes:
     - ReadWriteMany
@@ -18,9 +18,10 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   labels:
-    app: volume_model_claim
-  name: volume_model_claim
+    app: volume-model-claim
+  name: volume-model-claim
 spec:
+  volumeName: "model-volume"
   accessModes:
     - ReadWriteOnce
   resources:
@@ -32,9 +33,10 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   labels:
-    app: volume_archive_claim
-  name: volume_archive_claim
+    app: volume-archive-claim
+  name: volume-archive-claim
 spec:
+  volumeName: "archive-volume"
   accessModes:
     - ReadWriteOnce
   resources:
@@ -46,9 +48,10 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   labels:
-    app: volume_telemetry_claim
-  name: volume_telemetry_claim
+    app: volume-telemetry-claim
+  name: volume-telemetry-claim
 spec:
+  volumeName: "telemetry-volume"
   accessModes:
     - ReadWriteOnce
   resources:
@@ -60,9 +63,10 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   labels:
-    app: volume_outliers_claim
-  name: volume_outliers_claim
+    app: volume-outliers-claim
+  name: volume-outliers-claim
 spec:
+  volumeName: "outliers-volume"
   accessModes:
     - ReadWriteOnce
   resources:
