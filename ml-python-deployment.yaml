@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ml-python
+  name: ml-python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ml-python
+  template:
+    metadata:
+      labels:
+        app: ml-python
+    spec:
+      containers:
+        - env:
+            - name: MODEL
+              value: plant-disease-model-complete.pth
+            - name: THRESHOLD
+              value: "90"
+          image: muhammadb/xbu-ml-python
+          name: ml-python
+          volumeMounts:
+            - mountPath: /volumes/data/test/test
+              name: volume_input_claim
+            - mountPath: /volumes/model-store
+              name: volume_model_claim
+            - mountPath: /volumes/archive
+              name: volume_archive_claim
+            - mountPath: /volumes/telemetry
+              name: volume_telemetry_claim
+            - mountPath: /volumes/outliers
+              name: volume_outliers_claim
+      imagePullSecrets:
+        - name: regcred
+      volumes:
+        - name: volume_input_claim
+          persistentVolumeClaim:
+            claimName: volume_input_claim
+        - name: volume_model_claim
+          persistentVolumeClaim:
+            claimName: volume_model_claim
+        - name: volume_archive_claim
+          persistentVolumeClaim:
+            claimName: volume_archive_claim
+        - name: volume_telemetry_claim
+          persistentVolumeClaim:
+            claimName: volume_telemetry_claim
+        - name: volume_outliers_claim
+          persistentVolumeClaim:
+            claimName: volume_outliers_claim
