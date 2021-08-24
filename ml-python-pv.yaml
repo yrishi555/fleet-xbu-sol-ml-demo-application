@@ -21,7 +21,7 @@ spec:
       cluster: "edge.v0020.gselr5.local"
       cldbHosts: "10.1.20.50"
       securityType: "secure"
-      platinum: "true"
+      platinum: "false"
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -46,7 +46,7 @@ spec:
       cluster: "edge.v0020.gselr5.local"
       cldbHosts: "10.1.20.50"
       securityType: "secure"
-      platinum: "true"
+      platinum: "false"
 ---
  apiVersion: v1
 kind: PersistentVolume
@@ -71,8 +71,8 @@ spec:
       cluster: "edge.v0020.gselr5.local"
       cldbHosts: "10.1.20.50"
       securityType: "secure"
-      platinum: "true"
---
+      platinum: "false"
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -96,8 +96,8 @@ spec:
       cluster: "edge.v0020.gselr5.local"
       cldbHosts: "10.1.20.50"
       securityType: "secure"
-      platinum: "true"
---
+      platinum: "false"
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -121,4 +121,4 @@ spec:
       cluster: "edge.v0020.gselr5.local"
       cldbHosts: "10.1.20.50"
       securityType: "secure"
-      platinum: "true"
+      platinum: "false"
