@@ -18,17 +18,17 @@ spec:
         - env:
             - name: CHOKIDAR_USEPOLLING
               value: "true"
-          image: muhammadb/xbu-ui:prodv3
+          image: muhammadb/xbu-ui:prodv4
           name: ui
           ports:
             - containerPort: 3000
           stdin: true
           volumeMounts:
             - mountPath: /app/server/input
-              name: volume_input_claim
+              name: volume-input-claim
       imagePullSecrets:
         - name: regcred 
       volumes:
-        - name: volume_input_claim
+        - name: volume-input-claim
           persistentVolumeClaim:
-            claimName: volume_input_claim
+            claimName: volume-input-claim
