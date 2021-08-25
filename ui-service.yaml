@@ -3,7 +3,6 @@ kind: Service
 metadata:
   labels:
     app: ui
-    hpecp.hpe.com/hpecp-internal-gateway: "true"
   name: ui
 spec:
   ports:
