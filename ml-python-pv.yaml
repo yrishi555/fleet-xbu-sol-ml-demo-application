@@ -6,7 +6,7 @@ metadata:
     name: input-volume
 spec:
   accessModes:
-  - ReadWriteMany
+  - ReadOnlyMany
   persistentVolumeReclaimPolicy: Retain
   capacity:
     storage: 5Gi
@@ -31,7 +31,7 @@ metadata:
     name: model-volume
 spec:
   accessModes:
-  - ReadWriteOnce
+  - ReadOnlyMany
   persistentVolumeReclaimPolicy: Retain
   capacity:
     storage: 100Mi
